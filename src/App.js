@@ -3,8 +3,6 @@ import React, { Component } from 'react';
 // components
 import TagAutocomplete from './components/TagAutocomplete';
 
-const TAG_NAMES = [];
-
 class App extends Component {
 
   constructor (props) {
@@ -26,16 +24,33 @@ class App extends Component {
   }
  
   handleDelete = (tagId, tagName) => {
-    var indexOfTagName = TAG_NAMES.indexOf(tagName);
-    const newTags = this.state.tags.filter( item => item.id !== tagId );
-    if (TAG_NAMES.includes(tagName)) {
-      TAG_NAMES.splice(indexOfTagName, 1);
-    }
-    this.setState({ tags: newTags });
+    this.setState(prevState => {
+      const tags = [...prevState.tags];
+      const tagElement = tags.find(tag => tag.name === tagName);
+      const tagIndex = tags.indexOf(tagElement);
+
+      if(tagIndex !== -1) {
+        tags.splice(tagIndex, 1);
+      }
+
+      return { tags };
+    });
   }
  
   handleAddition = (tag) => {
-    this.state.tags.map( item => {
+    this.setState(prevState => {
+      const tags = [...prevState.tags];
+      const tagNames = tags.map(tag => tag.name);
+
+      if(!tagNames.includes(tag.name)) {
+        tags.push(tag);
+      }
+
+      return { tags };
+
+    });
+
+    /*this.state.tags.map( item => {
       TAG_NAMES.push(item.name);
     } );
 
@@ -44,7 +59,7 @@ class App extends Component {
     } else {
       const tags = [].concat(this.state.tags, tag);
       this.setState({ tags });
-    }
+    }*/
   }
  
 
