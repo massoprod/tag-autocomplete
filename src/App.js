@@ -23,11 +23,10 @@ class App extends Component {
     }
   }
  
-  handleDelete = (tagId, tagName) => {
+  handleDelete = (tagId) => {
     this.setState(prevState => {
       const tags = [...prevState.tags];
-      const tagElement = tags.find(tag => tag.name === tagName);
-      const tagIndex = tags.indexOf(tagElement);
+      const tagIndex = tags.findIndex(tag => tag.id === tagId);
 
       if(tagIndex !== -1) {
         tags.splice(tagIndex, 1);
