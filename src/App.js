@@ -25,10 +25,9 @@ class App extends Component {
     }
   }
  
-  handleDelete = (i) => {
-    const tags = this.state.tags.slice(0)
-    tags.splice(i, 1)
-    this.setState({ tags })
+  handleDelete = (tagId) => {
+    const newTags = this.state.tags.filter( item => item.id !== tagId )
+    this.setState({ tags: newTags })
   }
  
   handleAddition = (tag) => {
