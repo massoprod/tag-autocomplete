@@ -33,6 +33,7 @@ const TagAutocomplete = ({
     <ReactTags
       allowNew
       minQueryLength={ 0 }
+      autofocus={ false }
       placeholder={ 'Type new label...' }
       className={ 'input' }
       tags={ tags }
