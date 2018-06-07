@@ -23,10 +23,10 @@ const TagAutocomplete = ({
               }}
               key={ index }
             >
-              <span>
+              <span className={ 'tag-name' }>
                 { tag.name }
               </span>
-              <span className={'delete-icon'} onClick={ () => handleDelete(tag.id) }>
+              <span className={'delete-icon'} onClick={ () => handleDelete(tag.id, tag.name) }>
                 &#10005;
               </span>
             </span>

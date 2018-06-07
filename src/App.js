@@ -25,9 +25,13 @@ class App extends Component {
     }
   }
  
-  handleDelete = (tagId) => {
-    const newTags = this.state.tags.filter( item => item.id !== tagId )
-    this.setState({ tags: newTags })
+  handleDelete = (tagId, tagName) => {
+    var indexOfTagName = TAG_NAMES.indexOf(tagName);
+    const newTags = this.state.tags.filter( item => item.id !== tagId );
+    if (TAG_NAMES.includes(tagName)) {
+      TAG_NAMES.splice(indexOfTagName, 1);
+    }
+    this.setState({ tags: newTags });
   }
  
   handleAddition = (tag) => {
