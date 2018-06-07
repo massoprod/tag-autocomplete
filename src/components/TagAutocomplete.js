@@ -8,8 +8,12 @@ const TagAutocomplete = ({
   suggestions,
   handleDelete,
   handleAddition,
-}) =>
-  <div className={ 'wrapper' }>
+}) => {
+  const filteredSuggestions = suggestions.filter((item) => {
+    return tags.indexOf(item) === -1;
+  })
+
+  return( <div className={ 'wrapper' }>
     <div className={'tags-wrapper'}>
       {
         tags.map( (tag, index) => {
@@ -37,11 +41,12 @@ const TagAutocomplete = ({
       placeholder={ 'Type new label...' }
       className={ 'input' }
       tags={ tags }
-      suggestions={ suggestions }
+      suggestions={ filteredSuggestions }
       handleDelete={ handleDelete }
       handleAddition={ handleAddition }
     />
-  </div>
+  </div>);
+};
 
 TagAutocomplete.propTypes = {
   tags: T.array,
