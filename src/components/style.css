@@ -76,7 +76,12 @@
 
 .delete-icon {
   margin-left: 8px;
+  font-weight: light;
   cursor: pointer;
+}
+.delete-icon:hover,
+.delete-icon:focus {
+  font-weight: bold;
 }
 
 .tags-wrapper {
