@@ -1,0 +1,86 @@
+.wrapper {
+  display: flex;
+  border: 1px solid #b5b5b5;
+  padding: 4px;
+  align-items: center;
+  cursor: text;
+  flex-wrap: wrap;
+}
+
+.react-tags {
+  width: 100%;
+}
+
+.react-tags__search {
+  margin: 6px 0;
+}
+
+.react-tags__search-input {
+  width: 100%;
+}
+
+.react-tags__search-input > input {
+  border: none;
+  font-size: 13px;
+  margin-left: 5px;
+}
+
+.react-tags__search-input > input:focus {
+  outline: none;
+}
+
+.react-tags__selected-tag {
+  display: none;
+}
+
+.react-tags__suggestions {
+  position: absolute;
+  background: white;
+}
+
+.react-tags__suggestions > ul {
+  list-style-type: none;
+  min-width: 200px;
+  box-shadow: 1px 1px 10px #b9b9b9;
+  padding: 0;
+}
+
+.react-tags__suggestions > ul > li {
+  padding: 8px;
+  border-bottom: 1px solid lightgray;
+  font-size: 13px
+}
+
+.react-tags__suggestions > ul > li:hover,
+.react-tags__suggestions > ul > li:focus {
+  background: #b0d0df;
+  cursor: pointer;
+}
+
+.react-tags__suggestions > ul > li:last-child {
+  border-bottom: none;
+}
+
+.is-active {
+  background: #b0d0df;
+}
+
+.tag-item {
+  width: fit-content;
+  color: #FFF;
+  padding: 4px 8px;
+  font-size: 12px;
+  margin: 2px;
+  border-radius: 2px;
+}
+
+.delete-icon {
+  margin-left: 8px;
+  cursor: pointer;
+}
+
+.tags-wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
