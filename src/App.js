@@ -48,17 +48,6 @@ class App extends Component {
       return { tags };
 
     });
-
-    /*this.state.tags.map( item => {
-      TAG_NAMES.push(item.name);
-    } );
-
-    if ( TAG_NAMES.includes(tag.name) ) {
-      return false;
-    } else {
-      const tags = [].concat(this.state.tags, tag);
-      this.setState({ tags });
-    }*/
   }
  
 
