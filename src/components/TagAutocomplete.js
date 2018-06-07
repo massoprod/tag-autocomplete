@@ -11,7 +11,7 @@ const TagAutocomplete = ({
 }) => {
   const filteredSuggestions = suggestions.filter((item) => {
     return tags.indexOf(item) === -1;
-  })
+  });
 
   return( <div className={ 'wrapper' }>
     <div className={'tags-wrapper'}>

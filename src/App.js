@@ -10,6 +10,7 @@ class App extends Component {
  
     this.state = {
       tags: [],
+      tagsNames: [],
       suggestions: [
         { id: 1, name: "label1", color: '#ffa58d' },
         { id: 2, name: "label2", color: '#2dbb54' },
@@ -30,8 +31,13 @@ class App extends Component {
   }
  
   handleAddition = (tag) => {
-    const tags = [].concat(this.state.tags, tag)
-    this.setState({ tags })
+    if ( this.state.tagsNames.indexOf(tag.name) === -1 ) {
+      const tags = [].concat(this.state.tags, tag);
+      this.state.tagsNames.push(tag.name);
+      this.setState({ tags });
+    } else {
+      return false;
+    }
   }
  
 
